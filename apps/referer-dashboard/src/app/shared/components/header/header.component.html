@@ -1,0 +1,152 @@
+<header>
+  <section *ngIf="isLoggedIn">
+    <form id="selector" *ngIf="allProjects.length">
+      <mat-form-field appearance="fill">
+        <mat-label>Project Select</mat-label>
+        <mat-select
+          name="projects"
+          (selectionChange)="selectedValue($event)"
+          [value]="selectedProject?._id"
+          [disabled]="isUserInviteRouteActive"
+        >
+          <mat-option
+            *ngFor="let project of allProjects"
+            [value]="project?._id"
+          >
+            {{ project.name }} ({{ project.city }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <div class="fab-button-container dialog-button">
+      <button
+        mat-mini-fab
+        aria-label="Add project"
+        (click)="openDialog('add-project')"
+        [disabled]="isUserInviteRouteActive"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+      <button
+        *ngIf="
+          selectedProject &&
+          (selectedProject?.roles.admin === currentUser?._id ||
+            selectedProject?.roles.editor.includes(currentUser?._id))
+        "
+        mat-mini-fab
+        aria-label="Edit project"
+        (click)="openDialog('edit-project')"
+        [disabled]="isUserInviteRouteActive"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        *ngIf="
+          selectedProject &&
+          (selectedProject?.roles.admin === currentUser?._id ||
+            selectedProject?.roles.editor.includes(currentUser?._id))
+        "
+        mat-mini-fab
+        aria-label="Delete project"
+        (click)="deleteProject()"
+        [disabled]="isUserInviteRouteActive"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+      <button
+        *ngIf="
+          selectedProject?.roles.admin === currentUser?._id &&
+          !isUserInviteRouteActive
+        "
+        mat-mini-fab
+        aria-label="User invite"
+        routerLink="user-invite/{{ selectedProject._id }}"
+      >
+        <mat-icon> person_pin</mat-icon>
+      </button>
+      <button
+        mat-mini-fab
+        aria-lable="Go back"
+        (click)="goBack()"
+        *ngIf="isUserInviteRouteActive"
+      >
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+    </div>
+  </section>
+
+  <section *ngIf="!isLoggedIn"></section>
+
+  <section class="theme-selector">
+    <mat-icon
+      id="language-menu"
+      aria-hidden="false"
+      [matMenuTriggerFor]="language"
+      class="cursor-pointer"
+    >
+      language
+    </mat-icon>
+    <mat-menu #language="matMenu">
+      <button
+        mat-menu-item
+        *ngFor="let lang of allLanguages; let last = last"
+        (click)="changeLanguage(lang)"
+        [disabled]="lang === currentLanguage"
+        [ngClass]="{ 'border-bottom-menu': !last }"
+      >
+        <img
+          class="language-icon"
+          alt="flag-{{ lang }}"
+          width="16"
+          height="12"
+          src="assets/images/flags/{{ lang }}.svg"
+        />
+
+        {{ 'SHARED.LANGUAGES.' + lang.toUpperCase() | translate }}
+      </button>
+    </mat-menu>
+
+    <mat-icon
+      id="theme-menu"
+      aria-hidden="false"
+      [matMenuTriggerFor]="theme"
+      class="cursor-pointer"
+    >
+      view_quilt
+    </mat-icon>
+    <mat-menu #theme="matMenu">
+      <button
+        mat-menu-item
+        class="auto"
+        *ngFor="let theme of allThemes; let last = last"
+        class="theme-menu-item"
+        (click)="changeTheme(theme)"
+        [disabled]="theme === currentTheme"
+        [ngClass]="{ 'border-bottom-menu': !last }"
+      >
+        <span
+          class="theme-icon"
+          [ngClass]="
+            { dark: 'theme-icon--dark', light: 'theme-icon--light' }[theme]
+          "
+        ></span>
+        <span>{{ 'SHARED.THEMES.' + theme.toUpperCase() | translate }}</span>
+      </button>
+    </mat-menu>
+
+    <ng-container *ngIf="isLoggedIn">
+      <span class="user-info" [matMenuTriggerFor]="userInfo">
+        <mat-icon>account_circle</mat-icon>
+        <span id="name"
+          >{{ currentUser?.firstName }} {{ currentUser?.lastName }}</span
+        >
+      </span>
+      <mat-menu #userInfo="matMenu">
+        <button mat-menu-item (click)="logOut()">
+          {{ 'SHARED.LOGOUT' | translate }}
+        </button>
+      </mat-menu>
+    </ng-container>
+  </section>
+</header>

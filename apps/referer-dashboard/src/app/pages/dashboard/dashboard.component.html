@@ -1,0 +1,93 @@
+<mat-drawer-container class="dashboard-container" autosize>
+  <mat-drawer
+    #drawer
+    class="dashboard-sidenav"
+    mode="side"
+    [opened]="isMenuOpen"
+  >
+    <referer-me-mat-tree-menu
+      *ngIf="menuData?.length"
+      [currentUser]="currentUser"
+      [selectedProject]="selectedProject"
+      [projectId]="projectId"
+      [menuData]="menuData"
+      [menuType]="menuType"
+      [tabType]="tabType"
+      [dashboardSettingsTabType]="dashboardSettingsTabType"
+      [dynamicMenuData]="dynamicMenuData"
+    ></referer-me-mat-tree-menu>
+  </mat-drawer>
+
+  <div class="dashboard-sidenav-content">
+    <section class="dashboard-upper-side">
+      <mat-icon
+        (click)="drawer.toggle()"
+        (click)="setStateOfMenu()"
+        class="menu-togle"
+        >menu</mat-icon
+      >
+      <mat-button-toggle-group
+        name="fontStyle"
+        aria-label="Font Style"
+        class="border-none"
+        [value]="tabType"
+        *ngIf="areTabsDisplayed"
+      >
+        <mat-button-toggle
+          *ngIf="false"
+          class="btn-dashboard"
+          value="dashboard"
+          (click)="getData('dashboard')"
+        >
+          {{ 'DASHBOARD.DASHBOARD' | translate }}</mat-button-toggle
+        >
+        <mat-button-toggle
+          class="btn-dashboard"
+          value="data-costs"
+          (click)="getData('data-costs')"
+        >
+          {{ 'DASHBOARD.DATA_AND_COSTS' | translate }}</mat-button-toggle
+        >
+        <mat-button-toggle
+          class="btn-dashboard"
+          value="documents"
+          (click)="getData('documents')"
+        >
+          {{ 'DASHBOARD.DOCUMENTS' | translate }}</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+      <mat-button-toggle-group
+        name="fontStyle"
+        aria-label="Font Style"
+        class="border-none"
+        [value]="dashboardSettingsTabType"
+        *ngIf="areDashSettingsTabsDisplayed"
+      >
+        <mat-button-toggle
+          class="btn-dashboard"
+          value="overview"
+          (click)="choseDashboardSettingsTab('overview')"
+        >
+          {{ 'DASHBOARD.OVERVIEW' | translate }}</mat-button-toggle
+        >
+        <mat-button-toggle
+          class="btn-dashboard"
+          value="project-categories"
+          (click)="choseDashboardSettingsTab('project-categories')"
+        >
+          {{ 'DASHBOARD.PROJECT_CATEGORIES' | translate }}</mat-button-toggle
+        >
+        <mat-button-toggle
+          class="btn-dashboard"
+          value="settings"
+          (click)="choseDashboardSettingsTab('settings')"
+        >
+          {{ 'DASHBOARD.SETTINGS' | translate }}</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </section>
+    <section class="inner-router-container">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</mat-drawer-container>

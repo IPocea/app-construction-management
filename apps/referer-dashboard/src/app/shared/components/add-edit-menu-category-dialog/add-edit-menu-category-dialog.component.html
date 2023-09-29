@@ -1,0 +1,55 @@
+<section>
+  <form
+    autocomplete="off"
+    (ngSubmit)="addOrEditMenuItem($event)"
+    [formGroup]="createOrEditMenuItem"
+  >
+    <h1 *ngIf="selectedItem && itemType === 'container'">
+      {{ 'SHARED.EDIT_CATEGORY.TITLE' | translate }}
+    </h1>
+    <h1 *ngIf="!selectedItem && itemType === 'container'">
+      {{ 'SHARED.NEW_CATEGORY.TITLE' | translate }}
+    </h1>
+    <h1 *ngIf="selectedItem && itemType === 'page'">
+      {{ 'SHARED.EDIT_TASK.TITLE' | translate }}
+    </h1>
+    <h1 *ngIf="!selectedItem && itemType === 'page'">
+      {{ 'SHARED.NEW_TASK.TITLE' | translate }}
+    </h1>
+    <mat-form-field appearance="fill">
+      <mat-label *ngIf="selectedItem && itemType === 'container'">{{
+        'SHARED.EDIT_CATEGORY.NAME' | translate
+      }}</mat-label>
+      <mat-label *ngIf="!selectedItem && itemType === 'container'">{{
+        'SHARED.NEW_CATEGORY.NAME' | translate
+      }}</mat-label>
+      <mat-label *ngIf="selectedItem && itemType === 'page'">{{
+        'SHARED.EDIT_TASK.NAME' | translate
+      }}</mat-label>
+      <mat-label *ngIf="!selectedItem && itemType === 'page'">{{
+        'SHARED.NEW_TASK.NAME' | translate
+      }}</mat-label>
+      <input type="text" matInput formControlName="name" autocomplete="off" />
+    </mat-form-field>
+    <span class="buttons">
+      <button
+        type="button"
+        (click)="closeDialog()"
+        mat-raised-button
+        color="primary"
+        class="mat-focus-indicator secondary-text ternary-bg mat-button mat-button-base"
+      >
+        {{ 'SHARED.NEW_PROJECT.CANCEL' | translate }}
+      </button>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base"
+        [disabled]="createOrEditMenuItem.invalid || isLoading"
+      >
+        {{ 'SHARED.NEW_PROJECT.SUBMIT' | translate }}
+      </button>
+    </span>
+  </form>
+</section>

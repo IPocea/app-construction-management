@@ -1,0 +1,5 @@
+@import '../../shared/styles/mixin.scss';
+
+:host {
+  @include auth-forms();
+}

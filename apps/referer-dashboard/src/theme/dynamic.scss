@@ -1,0 +1,642 @@
+// The below code is just for reference at this point. You can pick from there anything you want and place it above this line
+a {
+    color: $primary;
+
+    &:hover {
+        color: $light-primary;
+    }
+}
+
+.mat-tree,
+.mat-drawer {
+    background-color: $secondary;
+    color: $primary;
+}
+
+.mat-drawer-container {
+    background-color: $secondary;
+    color: $light-ternary;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+    color: $primary;
+}
+
+.primary-text {
+    color: $primary;
+}
+
+.secondary-text {
+    color: $secondary;
+}
+
+.ternary-text {
+    color: $ternary;
+}
+
+.primary-bg {
+    background-color: $primary;
+}
+
+.secondary-bg {
+    background-color: $secondary;
+}
+
+.ternary-bg {
+    background-color: $ternary;
+}
+
+.logo--theme {
+    background-image: url('/assets/images/themes/#{$theme-name}/agenda-logo.svg');
+}
+
+.input-error {
+    color: $error;
+    text-shadow: #000 0px 0px 10px;
+}
+
+.placeholder-avatar {
+    border: 2px solid $primary;
+
+    &--unknown {
+        background-image: url('/assets/images/themes/#{$theme-name}/placeholder-avatar-primary.svg');
+    }
+}
+
+.mat-input-element {
+    color: $ternary;
+    caret-color: $ternary;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: $ternary;
+}
+
+.mat-icon {
+    color: $primary;
+
+    &.inactive {
+        color: $secondary;
+    }
+}
+
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+    background-color: $light-secondary
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: $light-secondary;
+}
+
+.mat-form-field-label {
+    color: $primary;
+}
+
+.mat-button.mat-primary[disabled],
+.mat-button.mat-accent[disabled],
+.mat-button.mat-warn[disabled],
+.mat-button[disabled][disabled],
+.mat-icon-button.mat-primary[disabled],
+.mat-icon-button.mat-accent[disabled],
+.mat-icon-button.mat-warn[disabled],
+.mat-icon-button[disabled][disabled],
+.mat-stroked-button.mat-primary[disabled],
+.mat-stroked-button.mat-accent[disabled],
+.mat-stroked-button.mat-warn[disabled],
+.mat-stroked-button[disabled][disabled] {
+    color: $secondary;
+    background-color: $ternary;
+    cursor: not-allowed;
+}
+
+.mat-snack-bar-container {
+    text-align: center;
+    &.info {
+        color: $primary;
+        background-color: $secondary;
+        border: 2px solid $primary;
+    }
+
+    &.error {
+        color: #FFF;
+        background-color: $error;
+    }
+}
+
+.mat-simple-snackbar {
+    display: inline-block;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: $primary;
+}
+
+.mat-dialog-container {
+    .dialog-title {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .dialog-content {
+        margin-bottom: 1.5rem;
+    }
+
+    .dialog-actions {
+        .btn-cancel {
+            background-color: $secondary;
+            color: $light-ternary;
+        }
+
+        .btn-ok {
+            background-color: $primary;
+            color: $secondary;
+        }
+    }
+}
+
+.mat-select-value {
+    color: $ternary;
+}
+
+.mat-select-arrow,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: $primary;
+}
+
+.mat-datepicker-toggle {
+    color: $primary;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: $primary;
+}
+
+.mat-paginator,
+.mat-paginator-page-size .mat-select-trigger {
+    color: $primary;
+    background-color: $secondary;
+}
+
+.mat-paginator {
+    .mat-select-value {
+        color: $primary;
+    }
+
+    .mat-form-field.mat-focused .mat-form-field-ripple {
+        background-color: $primary;
+    }
+
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        background-color: $primary;
+    }
+}
+
+.mat-checkbox {
+    &.mat-checkbox-checked.mat-accent {
+
+        .mat-checkbox-background,
+        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+            background-color: $primary;
+
+            .mat-checkbox-checkmark-path {
+                stroke: $secondary !important;
+            }
+        }
+    }
+
+    .mat-checkbox-frame {
+        border-color: $primary;
+    }
+
+    // overwrite the ripple overlay on hover and click
+    &:not(.mat-checkbox-disabled) .mat-checkbox-ripple .mat-ripple-element {
+        background-color: $ternary;
+    }
+}
+
+.mat-card {
+    background: $light-secondary;
+    color: $light-ternary;
+
+    .mat-card-header {
+        .mat-card-subtitle {
+            color: $ternary;
+        }
+    }
+}
+
+.upload-file-feature {
+    .ngx-file-drop__drop-zone {
+        border: 2px dotted $primary;
+
+        .upload-file-btn {
+            color: $light-ternary;
+        }
+    }
+}
+
+.mat-slide-toggle {
+    .mat-slide-toggle-thumb {
+        background-color: $ternary;
+    }
+
+    .mat-slide-toggle-bar {
+        background-color: $light-secondary;
+    }
+
+    &.mat-checked {
+        .mat-slide-toggle-thumb {
+            background-color: $primary;
+        }
+
+        .mat-slide-toggle-bar {
+            background-color: $dark-primary;
+        }
+    }
+}
+
+table.ag-table {
+    tr {
+        &:nth-child(odd) {
+            background-color: $light-secondary;
+        }
+
+        &:first-of-type {
+            background-color: $dark-secondary;
+        }
+
+        &.content-row {
+            &:hover {
+                background-color: $primary;
+                color: $secondary;
+
+                .placeholder-avatar {
+                    border: 2px solid $secondary;
+
+                    &--unknown {
+                        background-image: url('/assets/images/themes/#{$theme-name}/placeholder-avatar-secondary.svg');
+                    }
+                }
+
+                .mat-checkbox {
+                    &.mat-checkbox-checked.mat-accent {
+
+                        .mat-checkbox-background,
+                        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+                            background-color: $secondary;
+
+                            .mat-checkbox-checkmark-path {
+                                stroke: $primary !important;
+                            }
+                        }
+                    }
+
+                    .mat-checkbox-frame {
+                        border-color: $secondary;
+                    }
+                }
+            }
+        }
+
+        th {
+            color: $primary;
+        }
+    }
+}
+
+.ag-accordion {
+    .mat-expansion-panel {
+        background: $light-secondary;
+        color: $light-ternary;
+
+        .mat-expansion-panel-header-title {
+            color: $ternary;
+        }
+
+        .mat-expansion-indicator::after {
+            color: $ternary;
+        }
+
+        .ag-table {
+            tr:nth-child(odd) {
+                background-color: $secondary;
+            }
+
+            tr:first-of-type {
+                background-color: $dark-secondary;
+            }
+
+            tr.content-row:hover {
+                background-color: $primary;
+            }
+        }
+
+        .mat-badge-content {
+            background-color: $primary;
+            color: $secondary;
+        }
+    }
+}
+
+.page-title {
+    border-bottom: 1px dotted $primary;
+}
+
+.registration-fireworks {
+    background-image: url('/assets/images/themes/#{$theme-name}/fireworks.svg');
+}
+
+.link-format {
+    font-weight: bold;
+    color: $primary;
+    cursor: pointer;
+}
+
+.clear-search {
+    &:hover {
+        background-color: $primary;
+        color: $secondary;
+    }
+}
+
+.loading-overlay {
+    background: $light-secondary;
+}
+
+button.action-btn {
+    color: $primary;
+    background-color: $secondary;
+    border: 1px solid $primary;
+
+    .mat-icon {
+        .mat-badge-content {
+            color: $secondary;
+            background: $primary;
+        }
+    }
+
+    &:hover {
+        color: $secondary;
+        background-color: $primary;
+
+        .mat-icon {
+            color: $secondary;
+
+            .mat-badge-content {
+                color: $primary;
+                background: $secondary;
+            }
+        }
+    }
+}
+
+.switch-fav-btn {
+    color: $primary;
+    background-color: $secondary;
+    border: 1px solid $primary;
+
+    &.fav-active {
+        background-color: $primary;
+
+        .mat-icon {
+            color: $secondary;
+        }
+    }
+
+    .mat-icon {
+        height: 28px;
+    }
+}
+
+.mat-autocomplete-panel {
+    background-color: $light-secondary;
+
+    .mat-option {
+        border-bottom: 1px solid $light-ternary;
+        color: $ternary;
+
+        &.mat-active {
+            color: $ternary;
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// 404 page - start
+// .error-page-container {
+// background: $secondary;
+// }
+.error-page-container .container .ellipse {
+    background: $primary;
+}
+
+.error-page-container .container .ray {
+    border-top: 36vmin solid #8d8e7e;
+}
+
+.error-page-container .container .head {
+    background: $primary;
+}
+
+.error-page-container .container .neck {
+    border-top: 4.32vmin solid #333333;
+}
+
+.error-page-container .container .body-404 {
+    background: #646464;
+}
+
+.error-page-container .container label {
+    border: 0.432vmin solid #333333;
+    background: $primary;
+}
+
+.error-page-container .msg {
+    color: $secondary;
+}
+
+// 404 page - end
+//  Header - start
+.header-container {
+    .menu-button-container {
+        .line-menu-button {
+            background: $primary;
+        }
+    }
+}
+
+.menu-container {
+    background-color: $secondary;
+
+    .menu-item {
+        color: $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: $secondary;
+
+            .mat-icon {
+                color: $secondary;
+            }
+        }
+
+        &__inner {
+            border-bottom: 1px solid $primary;
+        }
+    }
+}
+
+//  Header - end
+//  User edit - start
+.user-edit {
+    &__photo {
+        .photo-file {
+            border: 1px solid $ternary;
+
+            &:hover {
+                background-color: $primary;
+                color: $secondary;
+
+                .mat-icon {
+                    color: $secondary;
+                }
+            }
+        }
+
+        .photo-remove {
+            color: $primary;
+            background-color: $secondary;
+            border: 1px solid $ternary;
+        }
+
+        .photo-placeholder {
+            background-image: url('/assets/images/themes/#{$theme-name}/placeholder-avatar-primary.svg');
+        }
+
+        .photo-image {
+            border: 2px solid $ternary;
+        }
+    }
+}
+
+//  User edit - end
+//  User view - start
+.user-view {
+    &__photo {
+        .photo-placeholder {
+            background-image: url('/assets/images/themes/#{$theme-name}/placeholder-avatar-primary.svg');
+        }
+
+        .photo-image {
+            border: 2px solid $ternary;
+        }
+    }
+}
+
+.active-link {
+    text-decoration: none;
+
+    &:hover {
+        transition: all .2s ease-in-out;
+        text-decoration: underline $ternary;
+        text-underline-position: under;
+        color: $ternary;
+    }
+}
+
+.is-active-link {
+    color: $ternary;
+
+    &:hover {
+        color: $ternary;
+        transition: all .2s ease-in-out;
+        text-decoration: underline $ternary;
+        text-underline-position: under;
+    }
+}
+
+//  User view - end
+
+//Progress bar start
+.mat-progress-bar-buffer {
+    background-color: $light-primary;
+}
+
+.mat-progress-bar-fill::after {
+    background-color: $dark-primary;
+}
+
+.mat-progress-bar-fill {
+    background-color: $dark-primary;
+}
+
+//End progress bar
+
+//start Table
+.mat-table {
+    background-color: $light-secondary;
+}
+
+.mat-cell {
+    color: $primary;
+    background-color: $light-secondary;
+}
+
+.mat-header-cell {
+    color: $dark-primary;
+    background-color: $light-secondary;
+}
+
+//end Table
+
+//start Documnts
+.button-documents {
+    color: $light-secondary;
+    background-color: $light-ternary;
+
+    &:active {
+        background-color: $error;
+        color: $light-secondary;
+    }
+}
+
+.pdf-box {
+    background-color: $light-secondary;
+    border: 2px solid $ternary;
+}
+
+// Start Error and Success colors
+.error {
+    color: $error;
+}
+
+.success {
+    color: $primary;
+}
+
+// end Error and Success colors
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+mat-dialog-container {
+  background: $dark-secondary;
+  color: inherit;
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mat-button-toggle-appearance-standard,
+.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+    border-left: solid 0px transparent;
+}

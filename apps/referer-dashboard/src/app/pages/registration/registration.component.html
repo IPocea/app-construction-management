@@ -1,0 +1,96 @@
+<section>
+    <form (ngSubmit)="createAccount()" [formGroup]="createAccountForm" autocomplete="off">
+        <h1>{{ 'REGISTRATION.TITLE' | translate }}</h1>
+        <mat-form-field appearance="fill">
+            <mat-label> {{ 'REGISTRATION.FIRST_NAME' | translate }}</mat-label>
+            <input type="text" matInput formControlName="firstName" autocomplete="off" />
+            <mat-icon matSuffix aria-hidden="false">person</mat-icon>
+            <mat-error *ngIf="createAccountForm.get('firstName').hasError('required')">
+                {{ 'REGISTRATION.ERROR_FIRST_NAME' | translate }}
+                <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'REGISTRATION.LAST_NAME' | translate }}</mat-label>
+            <input type="text" matInput formControlName="lastName" /> 
+            <mat-icon matSuffix aria-hidden="false">person</mat-icon>
+            <mat-error *ngIf="createAccountForm.get('lastName').hasError('required')">
+                {{ 'REGISTRATION.ERROR_LAST_NAME' | translate }}
+                <strong>required</strong></mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'REGISTRATION.EMAIL' | translate }}</mat-label>
+            <input type="email" matInput formControlName="email" />
+            <mat-icon matSuffix aria-hidden="false">email</mat-icon>
+            <mat-error *ngIf="createAccountForm.get('email').hasError('required')">
+                {{ 'REGISTRATION.ERROR_EMAIL' | translate }}
+                <strong>required</strong></mat-error>
+            <mat-error *ngIf="createAccountForm.get('email').hasError('pattern')">
+                {{ 'REGISTRATION.ERROR_EMAIL_INVALID' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'REGISTRATION.WEBSITE' | translate }}</mat-label>
+            <input type="text" matInput formControlName="website" />
+            <mat-icon matSuffix aria-hidden="false">public</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'REGISTRATION.PASSWORD' | translate }}</mat-label>
+            <input [type]="isPasswordHidden ? 'password' : 'text'" autocomplete="new-password" matInput formControlName="password" />
+            <span class="registration-pass-icons" matSuffix aria-hidden="false">
+        <mat-icon [matTooltip]="passwordToolTip">info_outline</mat-icon>
+        <mat-icon
+          matTooltip="{{
+            isPasswordHidden ? 'Show Password' : 'Hide Password'
+          }}"
+          class="cursor-pointer"
+          (click)="isPasswordHidden = !isPasswordHidden"
+        >
+          {{ isPasswordHidden ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+      </span>
+            <mat-error *ngIf="createAccountForm.get('password').hasError('required')">
+                {{ 'REGISTRATION.ERROR_PASSWORD' | translate }}
+                <strong>required</strong></mat-error>
+            <mat-error *ngIf="createAccountForm.get('password').hasError('pattern')">
+                {{ 'REGISTRATION.ERROR_PASSWORD_INVALID' | translate }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>{{ 'REGISTRATION.CONFIRM_PASSWORD' | translate }}</mat-label>
+            <input [type]="isPasswordHidden ? 'password' : 'text'" autocomplete="new-password" matInput formControlName="confirmPassword" />
+            <span class="registration-pass-icons" matSuffix aria-hidden="false">
+        <mat-icon [matTooltip]="passwordToolTip">info_outline</mat-icon>
+        <mat-icon
+          matTooltip="{{
+            isPasswordHidden ? 'Show Password' : 'Hide Password'
+          }}"
+          class="cursor-pointer"
+          (click)="isPasswordHidden = !isPasswordHidden"
+        >
+          {{ isPasswordHidden ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+      </span>
+
+            <mat-error *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid">
+                <span *ngIf="f['confirmPassword'].errors['required']">{{ 'REGISTRATION.ERROR_CONFIRM_PASSWORD' | translate }}
+          <strong>required</strong></span
+        >
+        <span *ngIf="f['confirmPassword'].errors['confirmedValidator']">
+          {{ 'REGISTRATION.ERROR_CONFIRM_PASSWORD_INVALID' | translate }}</span
+        >
+      </mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base padding-12"
+      [disabled]="createAccountForm.invalid || isAdding"
+    >
+      <mat-icon>account_circle</mat-icon>
+      {{ 'REGISTRATION.ACCOUNT' | translate }}
+    </button>
+    <div class="text-center">
+      {{ 'REGISTRATION.LOGIN_ACCOUNT' | translate }}
+      <a routerLink="/login"> {{ 'LOGIN.TITLE' | translate }}</a>
+  </div>
+  </form>
+</section>

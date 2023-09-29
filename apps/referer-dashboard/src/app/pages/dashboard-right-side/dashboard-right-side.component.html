@@ -1,0 +1,55 @@
+<section *ngIf="!isProjectSelected || !isItemSelected">
+  <div *ngIf="!isProjectSelected">
+    <p>
+      {{
+        'DASHBOARD_RIGHT_SIDE.PROJECT_NOT_SELECTED_OR_NOT_CREATED_FIRST_LINE'
+          | translate
+      }}
+    </p>
+    <p>
+      {{
+        'DASHBOARD_RIGHT_SIDE.PROJECT_NOT_SELECTED_OR_NOT_CREATED_SECOND_LINE'
+          | translate
+      }}
+    </p>
+  </div>
+  <div *ngIf="!isItemSelected">
+    <p>{{ 'DASHBOARD_RIGHT_SIDE.PROJECT_ITEM_ID_NOT_SELECTED' | translate }}</p>
+  </div>
+</section>
+
+<section *ngIf="dashboardData || dataCostsData || documentsData">
+  <div *ngIf="isDashboardDisplayed" class="dashboard-data">
+    <h2>{{ 'DASHBOARD_RIGHT_SIDE.PROJECT_STATUS' | translate }}</h2>
+    <mat-progress-bar
+      mode="determinate"
+      [value]="dashboardData.data.progress"
+    ></mat-progress-bar>
+    <div class="pie-charts-container">
+      <app-pie-chart
+        *ngFor="let pieChart of dashboardData?.data?.details"
+        [chartDataValue]="pieChart.dataset"
+        [chartDataLabels]="pieChart.labels"
+        [chartTitle]="pieChart.title"
+      >
+      </app-pie-chart>
+    </div>
+  </div>
+
+  <div *ngIf="areDataCostsDisplayed" class="data-costs">
+    <app-mat-table
+      [dataCostsData]="dataCostsData"
+      [selectedProject]="selectedProject"
+      (sendFilters)="requestDataCostsData($event)"
+    ></app-mat-table>
+  </div>
+
+  <div *ngIf="areDocumentsDisplayed" class="documents">
+    <referer-me-documents
+      [selectedProject]="selectedProject"
+      [documentsData]="documentsData"
+      (sendFiltersFromDocuments)="requestDocumentsData($event)"
+      (sendDocuments)="getUploadedDocuments($event)"
+    ></referer-me-documents>
+  </div>
+</section>

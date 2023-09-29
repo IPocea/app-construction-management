@@ -1,0 +1,97 @@
+<div class="documents-header">
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applySearchFilter()"
+      (keydown)="clearTimeout()"
+      placeholder="Filter"
+      [(ngModel)]="searchValue"
+    />
+    <button
+      [ngClass]="!searchValue ? 'hidden' : ''"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="clearSearchValue()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <button
+    *ngIf="
+      selectedProject?.roles.admin === currentUser?._id ||
+      selectedProject?.roles.editor.includes(currentUser?._id)
+    "
+    mat-raised-button
+    class="upload-icon"
+    (click)="openDragAndDrop()"
+  >
+    <mat-icon>backup</mat-icon
+    ><span class="ml-3">
+      {{ 'DASHBOARD_DOCUMENTS.UPLOAD_FILE_BUTTON' | translate }}</span
+    >
+  </button>
+</div>
+
+<div class="documents-upper-side">
+  <mat-button-toggle-group
+    class="select-buttons"
+    name="fontStyle"
+    aria-label="Font Style"
+  >
+    <div
+      class="documents-btns-inner-container"
+      *ngFor="let document of documentsData?.documents?.data"
+    >
+      <mat-button-toggle
+        [value]="document.id"
+        [matTooltip]="document.name"
+        matTooltipPosition="after"
+        (click)="showDocument(document)"
+        class="text-ellipsis long-btn"
+      >
+        {{ document.name }}
+      </mat-button-toggle>
+      <mat-button-toggle
+        *ngIf="
+          selectedProject?.roles.admin === currentUser?._id ||
+          selectedProject?.roles.editor.includes(currentUser?._id)
+        "
+        (click)="deleteDocument(document)"
+        class="short-btn"
+        [matTooltip]="'DASHBOARD_DOCUMENTS.DELETE_DOCUMENT' | translate"
+        matTooltipPosition="after"
+      >
+        <mat-icon>delete_forever</mat-icon>
+      </mat-button-toggle>
+    </div>
+  </mat-button-toggle-group>
+  <div class="pdf-box" *ngIf="pdfSrc || imgUrl">
+    <app-pdf-viewer *ngIf="pdfSrc" [pdfSrc]="pdfSrc"></app-pdf-viewer>
+    <img *ngIf="imgUrl" [src]="imgUrl" [alt]="selectedDocument?.name" />
+    <div class="image-overlay">
+      <span>{{
+        ('DASHBOARD_DOCUMENTS.IMAGE_OVERLAY.ADDED_BY' | translate) +
+          (' ' +
+            selectedDocument?.addedBy?.userFName +
+            ' ' +
+            selectedDocument?.addedBy?.userLName +
+            ' ') +
+          ('DASHBOARD_DOCUMENTS.IMAGE_OVERLAY.ON' | translate) +
+          ' ' +
+          (selectedDocument?.createdAt | customDate: 'long')
+      }}</span>
+    </div>
+  </div>
+</div>
+<div class="documents-lower-side">
+  <mat-paginator
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="pageSizeOptions"
+    [length]="length"
+    (page)="handlePageChange($event)"
+    [disabled]="isLoading"
+  ></mat-paginator>
+</div>

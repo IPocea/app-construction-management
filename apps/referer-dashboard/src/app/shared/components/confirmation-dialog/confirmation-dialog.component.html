@@ -1,0 +1,25 @@
+
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+    {{data.content}}
+</div>
+<span mat-dialog-actions class="buttons">
+  <button
+    [mat-dialog-close]="data.content"
+    type="button"
+    (click)="closeDialog()"
+    mat-raised-button
+    class="mat-focus-indicator secondary-text ternary-bg mat-button mat-button-base"
+  >
+    {{ 'SHARED.CANCEL' | translate }}
+  </button>
+  <button
+      type="button"
+      (click)="confirm()"
+      mat-raised-button
+      class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base"
+    >
+      {{ 'SHARED.CONFIRM' | translate }}
+  </button>
+
+  </span>

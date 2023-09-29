@@ -1,0 +1,9 @@
+@import '../../shared/styles/mixin.scss';
+:host {
+    @include auth-forms();
+    section {
+      h2 {
+        text-align: center;
+      }
+    }
+}

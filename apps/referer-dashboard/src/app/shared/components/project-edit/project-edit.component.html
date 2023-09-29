@@ -1,0 +1,62 @@
+<section>
+  <form
+    autocomplete="off"
+    (ngSubmit)="addOrEditProject($event)"
+    [formGroup]="createOrEditProjectForm"
+  >
+    <h1 *ngIf="selectedProject; else newProjectH1">
+      {{ 'SHARED.EDIT_PROJECT.TITLE' | translate }}
+    </h1>
+    <mat-form-field appearance="fill">
+      <mat-label *ngIf="!selectedProject">{{
+        'SHARED.NEW_PROJECT.NAME' | translate
+      }}</mat-label>
+      <mat-label *ngIf="selectedProject">{{
+        'SHARED.EDIT_PROJECT.NAME' | translate
+      }}</mat-label>
+      <input type="text" matInput formControlName="name" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label *ngIf="!selectedProject">{{
+        'SHARED.NEW_PROJECT.CITY' | translate
+      }}</mat-label>
+      <mat-label *ngIf="selectedProject">{{
+        'SHARED.EDIT_PROJECT.CITY' | translate
+      }}</mat-label>
+      <input type="text" matInput formControlName="city" autocomplete="off" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label *ngIf="!selectedProject">{{
+        'SHARED.NEW_PROJECT.AREA' | translate
+      }}</mat-label>
+      <mat-label *ngIf="selectedProject">{{
+        'SHARED.EDIT_PROJECT.AREA' | translate
+      }}</mat-label>
+      <input type="text" matInput formControlName="area" autocomplete="off" />
+    </mat-form-field>
+    <span class="buttons">
+      <button
+        type="button"
+        (click)="closeDialog()"
+        mat-raised-button
+        color="primary"
+        class="mat-focus-indicator secondary-text ternary-bg mat-button mat-button-base"
+      >
+        {{ 'SHARED.NEW_PROJECT.CANCEL' | translate }}
+      </button>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base"
+        [disabled]="createOrEditProjectForm.invalid || isLoading"
+      >
+        {{ 'SHARED.NEW_PROJECT.SUBMIT' | translate }}
+      </button>     
+    </span>
+  </form>
+</section>
+
+<ng-template #newProjectH1>
+  <h1>{{ 'SHARED.NEW_PROJECT.TITLE' | translate }}</h1>
+</ng-template>

@@ -1,0 +1,5 @@
+<div class="pdf-box-dialog">
+  <button (click)="closeDialog()"><mat-icon>clear</mat-icon></button>
+  <app-pdf-viewer *ngIf="pdfSrc" [pdfSrc]="pdfSrc"></app-pdf-viewer>
+  <img *ngIf="imgUrl" [src]="imgUrl" [alt]="selectedDocument?.name">
+</div>

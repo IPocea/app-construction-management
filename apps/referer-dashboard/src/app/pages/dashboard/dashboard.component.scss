@@ -1,0 +1,69 @@
+@import '../../shared/styles/mixin.scss';
+:host {
+  mat-drawer-container {
+    width: 100%;
+    height: 100%;
+    mat-drawer.dashboard-sidenav {
+      padding: 10px;
+      width: 230px;
+    }
+    mat-tree {
+      mat-tree-node {
+        span {
+          cursor: pointer;
+        }
+      }
+      .tree-node {
+        .menu-btn {
+          opacity: 0;
+          transition: all 0.5s;
+        }
+      }
+      .tree-node:hover .menu-btn {
+        opacity: 1;
+      }
+    }
+    .dashboard-sidenav-content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .dashboard-upper-side {
+        display: flex;
+        .menu-togle {
+          cursor: pointer;
+          padding: 10px;
+          height: 8px;
+        }
+        mat-button-toggle-group.border-none {
+          border: none;
+          mat-button-toggle.btn-dashboard {
+            margin-left: 10px;
+          }
+        }
+
+        @include auth-forms();
+      }
+      .inner-router-container {
+        overflow: auto;
+      }
+    }
+  }
+}
+
+mat-sidenav {
+  width: 200px;
+  height: 100%;
+}
+
+.progress-bar {
+  margin-left: 50px;
+}
+
+.progress {
+  margin-top: 30px;
+}
+
+.pieChart {
+  max-width: 400px;
+  max-height: 600px;
+}

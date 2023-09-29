@@ -1,0 +1,70 @@
+:host {
+  header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 10px;
+
+    section {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      .fab-button-container {
+        button {
+          margin-right: 5px;
+        }
+      }
+      mat-icon {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      .icon-plus {
+        margin-left: 1px;
+      }
+      .mat-fab {
+        line-height: 20px;
+        padding: 0 10px;
+        width: 52px;
+        height: 52px;
+        top: -11px;
+        margin-left: 10px;
+      }
+      .mat-fab .mat-button-wrapper {
+        padding: 15px 0;
+      }
+    }
+
+    section:last-child {
+      margin: 10px;
+    }
+  }
+  .dialog-button {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.34375em;
+    margin-left: 10px;
+    button {
+      mat-icon {
+        margin: 0;
+      }
+    }
+  }
+  @media screen and (min-width: 820px) {
+    header {
+      section {
+        mat-form-field {
+          all: unset;
+        }
+      }
+    }
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  #name {
+    margin-left: 5px;
+  }
+}

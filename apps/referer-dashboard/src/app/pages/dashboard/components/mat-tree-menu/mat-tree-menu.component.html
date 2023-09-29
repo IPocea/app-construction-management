@@ -1,0 +1,115 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node
+    *matTreeNodeDef="let node"
+    matTreeNodePadding
+    class="tree-node"
+  >
+    <a
+      [routerLink]="getNodeParams(node)"
+      routerLinkActive="is-active-link"
+      class="active-link"
+      >{{ node.name }}</a
+    >
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Icon-button with a menu"
+      class="menu-btn"
+      *ngIf="
+        node.type !== 'undeletable' &&
+        (selectedProject?.roles.admin === currentUser?._id ||
+          selectedProject?.roles.editor.includes(currentUser?._id))
+      "
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        (click)="openDialog('edit-category-or-task', 'page', null, node)"
+      >
+        <mat-icon>edit</mat-icon>
+        <span>{{ 'SHARED.EDIT_TASK.EDIT' | translate }}</span>
+      </button>
+      <button
+        mat-menu-item
+        (click)="openDialog('delete-category-or-task', node.type, null, node)"
+      >
+        <mat-icon>delete</mat-icon>
+        <span>{{ 'SHARED.EDIT_TASK.DELETE' | translate }}</span>
+      </button>
+    </mat-menu>
+  </mat-tree-node>
+  <mat-tree-node
+    *matTreeNodeDef="let node; when: hasChild"
+    matTreeNodePadding
+    class="tree-node"
+  >
+    <button
+      mat-icon-button
+      matTreeNodeToggle
+      [attr.aria-label]="'Toggle ' + node.name"
+    >
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{
+          treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'
+        }}</mat-icon
+      >
+    </button>
+    <span matTreeNodeToggle>{{ node.name }}</span>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Icon-button with a menu"
+      class="menu-btn"
+      *ngIf="
+        selectedProject?.roles.admin === currentUser?._id ||
+        selectedProject?.roles.editor.includes(currentUser?._id)
+      "
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        (click)="openDialog('edit-category-or-task', 'container', null, node)"
+      >
+        <mat-icon>edit</mat-icon>
+        <span>{{ 'SHARED.EDIT_CATEGORY.EDIT' | translate }}</span>
+      </button>
+      <button
+        mat-menu-item
+        (click)="openDialog('delete-category-or-task', node.type, null, node)"
+      >
+        <mat-icon>delete</mat-icon>
+        <span>{{ 'SHARED.EDIT_CATEGORY.DELETE' | translate }}</span>
+      </button>
+      <button
+        mat-menu-item
+        (click)="openDialog('add-category-or-task', 'page', node)"
+      >
+        <mat-icon>add</mat-icon>
+        <span>{{ 'SHARED.EDIT_CATEGORY.ADD_TASK' | translate }}</span>
+      </button>
+      <button
+        mat-menu-item
+        (click)="openDialog('add-category-or-task', 'container', node)"
+      >
+        <mat-icon>add</mat-icon>
+        <span>{{ 'SHARED.EDIT_CATEGORY.ADD_SUBCATEGORY' | translate }}</span>
+      </button>
+    </mat-menu>
+  </mat-tree-node>
+</mat-tree>
+<button
+  *ngIf="
+    menuType === 'dynamic' &&
+    (selectedProject?.roles.admin === currentUser?._id ||
+      selectedProject?.roles.editor.includes(currentUser?._id))
+  "
+  mat-mini-fab
+  aria-label="Add category"
+  (click)="openDialog('add-category-or-task', 'container', dynamicMenuData)"
+>
+  <mat-icon>add</mat-icon>
+</button>

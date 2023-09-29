@@ -1,0 +1,12 @@
+<section>
+  <div *ngIf="isOverviewDisplayed" class="dashboard-overview">
+    {{'DEVELOPMENT_LINES.IN_PROGRESS' | translate}}
+  </div>
+  <div *ngIf="areProjectCategoriesDisplayed" class="project-categories">
+    {{'DEVELOPMENT_LINES.IN_PROGRESS' | translate}}
+  </div>
+  <referer-me-dsh-settings
+    *ngIf="areSettingsDisplayed"
+    [tabType]="tabType"
+  ></referer-me-dsh-settings>
+</section>

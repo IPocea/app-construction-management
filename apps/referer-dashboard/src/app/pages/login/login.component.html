@@ -1,0 +1,65 @@
+<section>
+  <form (ngSubmit)="login()" [formGroup]="loginForm">
+    <h1>{{ 'LOGIN.TITLE' | translate }}</h1>
+    <input type="text" name="username" class="d-none" />
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'LOGIN.EMAIL' | translate }}</mat-label>
+      <input type="text" matInput formControlName="username" />
+
+      <mat-icon matSuffix aria-hidden="false">email</mat-icon>
+
+      <mat-error *ngIf="loginForm.get('username').hasError('required')"
+        >{{ 'LOGIN.ERROR_EMAIL' | translate }}
+        <strong>required</strong></mat-error
+      >
+      <mat-error *ngIf="loginForm.get('username').hasError('pattern')">
+        {{ 'LOGIN.ERROR_EMAIL_INVALID' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'LOGIN.PASSWORD' | translate }}</mat-label>
+      <input
+        [type]="isPasswordHidden ? 'password' : 'text'"
+        autocomplete="new-password"
+        matInput
+        formControlName="password"
+      />
+      <span class="registration-pass-icons" matSuffix aria-hidden="false">
+        <mat-icon [matTooltip]="passwordToolTip">info_outline</mat-icon>
+        <mat-icon
+          matTooltip="{{
+            isPasswordHidden ? 'Show Password' : 'Hide Password'
+          }}"
+          class="cursor-pointer"
+          (click)="isPasswordHidden = !isPasswordHidden"
+        >
+          {{ isPasswordHidden ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
+      </span>
+
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        {{ 'LOGIN.ERROR_PASSWORD' | translate }}
+        <strong>required</strong></mat-error
+      >
+      <mat-error *ngIf="loginForm.get('password').hasError('pattern')">
+        {{ 'LOGIN.ERROR_PASSWORD_INVALID' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base padding-12"
+      [disabled]="loginForm.invalid || isLogging"
+    >
+      {{ 'LOGIN.SUBMIT' | translate }}
+    </button>
+    <div class="text-center">
+      {{ 'LOGIN.ACCOUNT' | translate }}
+      <a routerLink="/registration"> {{ 'LOGIN.REGISTER' | translate }}</a>
+    </div>
+    <div class="text-center">
+      <a routerLink="/forgot-password"> {{ 'LOGIN.FORGOT' | translate }}</a>
+    </div>
+  </form>
+</section>

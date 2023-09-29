@@ -1,0 +1,22 @@
+<p>{{ 'ABOUT.TITLE' | translate }}</p>
+<BR />
+<a mat-button color="primary" routerLink="/home">
+  {{ 'MENU.BUTTON_HOME' | translate }}</a
+>
+<BR />
+<BR />
+<a mat-stroked-button color="accent" routerLink="/about" disabled>
+  {{ 'MENU.BUTTON_ABOUT' | translate }}</a
+>
+<BR />
+<BR />
+<a mat-raised-button color="accent" routerLink="/projects">
+  {{ 'MENU.BUTTON_PROJECTS' | translate }}</a
+>
+<BR />
+<BR />
+<mat-slide-toggle style="margin-left: 20px">
+    {{ 'ABOUT.SLIDE_TOGGLE' | translate }}
+</mat-slide-toggle>
+
+<router-outlet></router-outlet>

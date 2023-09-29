@@ -1,0 +1,85 @@
+:host {
+  .file-uploader-container {
+    border: 2px dashed;
+    padding: 3rem;
+    .files-for-upload {
+      margin-bottom: 3rem;
+      .selected-file {
+        border-radius: 0;
+        &:not(:last-of-type) {
+          margin-bottom: 1rem;
+        }
+        .mat-expansion-panel-header {
+          cursor: default;
+          height: auto;
+          padding: 0;
+          width: 100%;
+          &[aria-disabled='true'] {
+            color: inherit;
+          }
+          .selected-file__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            .selected-file__name {
+              overflow: hidden;
+              padding: 0 1.5rem;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+            .selected-file__actions {
+              display: flex;
+              justify-content: flex-end;
+              button {
+                display: flex;
+                align-items: center;
+                min-width: 0;
+                padding: 0 15px;
+              }
+            }
+          }
+
+          &.mat-expanded {
+            .selected-file__header {
+              border-bottom: solid 1px;
+            }
+          }
+          .mat-content {
+            display: block;
+          }
+          ::ng-deep {
+            span {
+              display: block;
+            }
+          }
+        }
+        .mat-expansion-panel-body {
+          padding-top: 1rem;
+        }
+      }
+    }
+    .file-uploader__instructions {
+      margin-bottom: 3rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .file-upload__options {
+      display: flex;
+      justify-content: center;
+      button {
+        &.all_file__upload,
+        &.all_file__cancel {
+          display: flex;
+          align-items: center;
+          border-left: 2px solid;
+          min-width: 0;
+          padding: 0 15px;
+        }
+      }
+      .file-upload__native-selection {
+        display: none;
+      }
+    }
+  }
+}

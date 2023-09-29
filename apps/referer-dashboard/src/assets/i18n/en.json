@@ -1,0 +1,279 @@
+{
+  "SHARED": {
+    "CHANGE_LANGUAGE": "Change language",
+    "CHANGE_THEME": "Change theme",
+    "USERNAME": "Username",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "EMAIL": "Email",
+    "BIRTH_DATE": "Birth date",
+    "NOTE": "Note",
+    "PHONE": "Telephone number",
+    "PASSWORD": "Password",
+    "PASSWORD_REPEAT": "Repeat password",
+    "SHOW_PASSWORD": "Show password",
+    "HIDE_PASSWORD": "Hide password",
+    "SUBMIT": "Submit",
+    "LOGOUT": "Log Out",
+    "CONFIRM": "Confirm",
+    "CANCEL": "Cancel",
+    "UPLOAD": "Upload",
+    "LANGUAGES": {
+      "RO": "Romanian",
+      "EN": "English"
+    },
+    "THEMES": {
+      "DARK": "Dark",
+      "LIGHT": "Light",
+      "AUTO": "Auto"
+    },
+    "NEW_PROJECT": {
+      "TITLE": "New project",
+      "NAME": "Project name",
+      "CITY": "City of project",
+      "AREA": "Area of project",
+      "SUBMIT": "Submit",
+      "CANCEL": "Cancel",
+      "SUCCESS": " was added successfully"
+    },
+    "EDIT_PROJECT": {
+      "TITLE": "Edit Project",
+      "NAME": "Project name",
+      "CITY": "City of project",
+      "AREA": "Area of project",
+      "SUCCESS": " was successfuly edited"
+    },
+    "DELETE_PROJECT": {
+      "TITLE": "Delete the project",
+      "CONTENT": "Are you sure you want to delete this project?",
+      "SUCCESS": " was successfuly deleted"
+    },
+    "NEW_CATEGORY": {
+      "TITLE": "New category",
+      "NAME": "Category name",
+      "SUCCESS": "The category was added successfully"
+    },
+    "NEW_TASK": {
+      "TITLE": "New task",
+      "NAME": "Task name",
+      "SUCCESS": "The task was added successfully"
+    },
+    "EDIT_CATEGORY": {
+      "TITLE": "Edit category",
+      "NAME": "Category name",
+      "SUCCESS": "The category was successfuly edited",
+      "EDIT": "Edit the category",
+      "DELETE": "Delete the category",
+      "ADD_TASK": "Add a new task",
+      "ADD_SUBCATEGORY": "Add subcategory"
+    },
+    "EDIT_TASK": {
+      "TITLE": "Edit task",
+      "NAME": "Task name",
+      "SUCCESS": "The task was successfuly edited",
+      "EDIT": "Edit the task",
+      "DELETE": "Delete the task"
+    },
+    "DELETE_CATEGORY": {
+      "TITLE": "Delete the category",
+      "CONTENT": "Are you sure you want to delete this category?",
+      "SUCCESS": "The category was successfuly deleted"
+    },
+    "DELETE_TASK": {
+      "TITLE": "Delete the task",
+      "CONTENT": "Are you sure you want to delete this task?",
+      "SUCCESS": "The task was successfuly deleted"
+    }
+  },
+  "MENU": {
+    "BUTTON_HOME": "HOME",
+    "BUTTON_ABOUT": "ABOUT",
+    "BUTTON_PROJECTS": "PROJECTS",
+    "BUTTON_USERS": "USERS",
+    "BUTTON_DASHBOARD": "DASHBOARD"
+  },
+  "HOME": {
+    "TITLE": "HOME work",
+    "FORM_MAT_LABEL": "Favorite food",
+    "FORM_INPUT_PLACEHOLDER": "Eg. Pizza"
+  },
+  "ABOUT": {
+    "TITLE": "ABOUT work",
+    "SLIDE_TOGGLE": "Slide me!"
+  },
+  "FORGOT": {
+    "TITLE": "Forgot password?",
+    "SUB_TITLE": "Please insert your email address",
+    "EMAIL": "Email address",
+    "ERROR_RESET_LINK": "Email is",
+    "ERROR_EMAIL_INVALID": "Invalid email",
+    "SEND_EMAIL_LINK": "Send reset link"
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "EMAIL": "Email",
+    "ERROR_EMAIL": "Email is",
+    "ERROR_EMAIL_INVALID": "Invalid email",
+    "PASSWORD": "Password",
+    "ERROR_PASSWORD": "Password is",
+    "ERROR_PASSWORD_INVALID": "Invalid Password",
+    "SUBMIT": "Submit",
+    "ACCOUNT": "Don't have an account yet?",
+    "REGISTER": "Register",
+    "FORGOT": "Did you forgot your password?"
+  },
+  "PROJECTS": {
+    "TITLE": "PROJECTS work",
+    "THE_PROJECT": "THE PROJECT"
+  },
+  "PROJECTS_ID": {
+    "TITLE": "ID selected!"
+  },
+  "REGISTRATION": {
+    "TITLE": "Registration",
+    "FIRST_NAME": "First name",
+    "ERROR_FIRST_NAME": "First name is",
+    "LAST_NAME": "Last name",
+    "ERROR_LAST_NAME": "Last name is",
+    "EMAIL": "Email address",
+    "ERROR_EMAIL": "Email is",
+    "ERROR_EMAIL_INVALID": "Invalid email",
+    "WEBSITE": "Website",
+    "PASSWORD": "Password",
+    "ERROR_PASSWORD": "Password is",
+    "ERROR_PASSWORD_INVALID": "Invalid password",
+    "CONFIRM_PASSWORD": "Confirm password",
+    "ERROR_CONFIRM_PASSWORD": "Confirm password is",
+    "ERROR_CONFIRM_PASSWORD_INVALID": "Password does not match",
+    "ACCOUNT": "Create account",
+    "LOGIN_ACCOUNT": "Already have an account?"
+  },
+  "RESET_PASSWORD": {
+    "TITLE": "Reset password",
+    "SUB_TITLE": "Please insert your new password address",
+    "PASSWORD": "Password",
+    "ERROR_PASSWORD": "Password is",
+    "ERROR_PASSWORD_INVALID": "Invalid password",
+    "CONFIRM_PASSWORD": "Confirm password",
+    "ERROR_CONFIRM_PASSWORD": "Confirm password is",
+    "ERROR_CONFIRM_PASSWORD_INVALID": "Password does not match",
+    "RESET": "Reset password"
+  },
+  "USERS": {
+    "TITLE": "USERS work",
+    "BUTTON_CLICK": "Click here"
+  },
+  "USER_INVITE": {
+    "TITLE": "Add the email address to invite a person to the project",
+    "EMAIL": "Email address",
+    "ERROR_EMAIL": "Email is",
+    "ERROR_EMAIL_INVALID": "Invalid email",
+    "ERROR_REQUIRED": "required",
+    "SELECT_ROLE": {
+      "LABEL": "Chose one",
+      "EDITOR": "Editor",
+      "VIEWER": "Viewer",
+      "ERROR_REQUIRED": "You must make a selection"
+    },
+    "SUBMIT_BUTTON": "Send the invite",
+    "CONFIRM_DIALOG": {
+      "TITLE": "Resend the email?",
+      "CONTENT": "The user already has this role to this project or the invitation email was already sent. Do you wish to send the email again?"
+    }
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Copyright"
+  },
+  "HEADER": {
+    "LOGIN": "Login",
+    "REGISTRATION": "Registration",
+    "HOME": "Home"
+  },
+  "DASHBOARD": {
+    "DASHBOARD": "Dashboard",
+    "DATA_AND_COSTS": "Data and Costs",
+    "DOCUMENTS": "Documents",
+    "OVERVIEW": "Overview",
+    "PROJECT_CATEGORIES": "Project Categories",
+    "SETTINGS": "Settings"
+  },
+  "DASHBOARD_FORM": {
+    "TITLE": "Project form",
+    "NAME": "Your name",
+    "PROJECT_STRUCTURE": "Structure project name",
+    "PROJECT_NAME": "Project name",
+    "AUTHORISATION_NR": "Authorisation number",
+    "SEND_DATA": "Send data"
+  },
+  "DASHBOARD_RIGHT_SIDE": {
+    "PROJECT_STATUS": "Project status",
+    "PROJECT_NOT_SELECTED_OR_NOT_CREATED_FIRST_LINE": "You have not selected or you did not created any project.",
+    "PROJECT_NOT_SELECTED_OR_NOT_CREATED_SECOND_LINE": "Please select or create a project.",
+    "PROJECT_ITEM_ID_NOT_SELECTED": "Please open the menu and select an item."
+  },
+  "DASHBOARD_TABLE_FORM": {
+    "TITLE": "New Data and Costs",
+    "NUMBER": "Number",
+    "NAME": "Name",
+    "MEASUREMENT_UNIT": "Measurement Unit",
+    "QUANTITY": "Quantity",
+    "UNIT_PRICE": "Unit Price",
+    "VALUE": "Value",
+    "CREATED_AT": "Created at",
+    "UPDATED_AT": "Updated at",
+    "MENTIONES": "Mentiones"
+  },
+  "DASHBOARD_TABLE_FORM_MAT_ERROR": {
+    "NAME_REQUIRED": "Name is required",
+    "MEASUREMENT_UNIT_REQUIRED": "Measurement unit is required",
+    "QUANTITY_REQUIRED": "Quantity is required",
+    "QUANTITY_PATTERN": "Quantity can be made only by numbers",
+    "UNIT_PRICE_REQUIRED": "Unit Price is required",
+    "UNIT_PRICE_PATTERN": "Unit Price can be made only by numbers",
+    "MENTIONES_REQUIRED": "Mentiones are required"
+  },
+  "MAT_TABLE": {
+    "ACTIONS": "Actions",
+    "EDIT": "Edit item",
+    "DELETE": "Delete item",
+    "DELETE_DIALOG_TITLE": "Delete the item",
+    "DELETE_DIALOG_CONTENT": "Are you sure you want to delete this item?",
+    "NO_ITEM": "No item",
+    "NO_MENTIONS": "No mentions",
+    "NOT_EDITED": "Not edited"
+  },
+  "DASHBOARD_DOCUMENTS": {
+    "UPLOAD_FILE_BUTTON": "Upload files",
+    "OPEN_UPLOAD_FIELD": "Open the upload field",
+    "CLOSE_UPLOAD_FIELD": "Close the upload field",
+    "DELETE_DOCUMENT": "Delete document",
+    "DELETE_CONFIRMATION": {
+      "TITLE": "Delete the document",
+      "CONTENT": "Are you sure you want to delete this document?"
+    },
+    "IMAGE_OVERLAY": {
+      "ADDED_BY": "Added by ",
+      "ON": " on "
+    }
+  },
+  "UPLOAD_FILE": {
+    "INSTRUCTIONS": "Drag and drop the file(s) here or click on \"Browse Files\".",
+    "UPLOAD_SUCCESS": "The file was uploaded successfully",
+    "UPLOADS_SUCCESS": "The files were uploaded successfully",
+    "BROWS_FILE_BTN": "Browse Files",
+    "MAT_TOOL_TIP": {
+      "UPLOAD": "Upload",
+      "UPLOAD_ALL": "Upload all",
+      "CANCEL": "Cancel",
+      "CANCEL_ALL": "Cancel All"
+    }
+  },
+  "DASHBOARD_PAGE": {
+    "SETTINGS": {
+      "DYNAMIC_MENU": "Dynamic Menu"
+    }
+  },
+  "DEVELOPMENT_LINES": {
+    "IN_PROGRESS": "In progress..."
+  }
+}

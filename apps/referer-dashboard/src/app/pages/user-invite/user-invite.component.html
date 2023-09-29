@@ -1,0 +1,48 @@
+<section>
+  <form
+    (ngSubmit)="sendInvitation($event)"
+    [formGroup]="sendInvitationForm"
+    autocomplete="off"
+  >
+    <h2>{{ 'USER_INVITE.TITLE' | translate }}</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'USER_INVITE.EMAIL' | translate }}</mat-label>
+      <input type="email" matInput formControlName="email" />
+      <mat-icon matSuffix aria-hidden="false">email</mat-icon>
+      <mat-error *ngIf="sendInvitationForm.get('email').hasError('required')">
+        {{ 'USER_INVITE.ERROR_EMAIL' | translate }}
+        <strong>{{
+          'USER_INVITE.ERROR_REQUIRED' | translate
+        }}</strong></mat-error
+      >
+      <mat-error *ngIf="sendInvitationForm.get('email').hasError('pattern')">
+        {{ 'USER_INVITE.ERROR_EMAIL_INVALID' | translate }}</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'USER_INVITE.SELECT_ROLE.LABEL' | translate }}</mat-label>
+      <mat-select formControlName="roleType">
+        <mat-option value="editor">{{
+          'USER_INVITE.SELECT_ROLE.EDITOR' | translate
+        }}</mat-option>
+        <mat-option value="viewer">{{
+          'USER_INVITE.SELECT_ROLE.VIEWER' | translate
+        }}</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="sendInvitationForm.get('roleType').hasError('required')"
+        >{{ 'USER_INVITE.SELECT_ROLE.ERROR_REQUIRED' | translate }}</mat-error
+      >
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base padding-12"
+      [disabled]="sendInvitationForm.invalid || isAdding"
+    >
+      <mat-icon>account_circle</mat-icon>
+      {{ 'USER_INVITE.SUBMIT_BUTTON' | translate }}
+    </button>
+  </form>
+</section>

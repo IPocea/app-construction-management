@@ -1,0 +1,12 @@
+<p>{{ 'USERS.TITLE' | translate }}</p>
+<button type="button" (click)="getUsers()">
+  {{ 'USERS.BUTTON_CLICK' | translate }}
+</button>
+
+<div class="users" *ngIf="users">
+    <span class="left">
+    <ul *ngFor="let user of users">
+      <li>{{ user.username }} -> {{ user.name }} -> {{ user.email }}</li>
+    </ul>
+  </span>
+</div>

@@ -1,0 +1,72 @@
+@mixin auth-forms {
+  section {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    h1,
+    p {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      width: 90%;
+      h1 {
+        text-align: center;
+      }
+      mat-form-field {
+        .registration-pass-icons {
+          display: flex;
+          gap: 3px;
+          .cursor-pointer {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 820px) {
+    section {
+      form {
+        width: 600px;
+      }
+    }
+  }
+}
+
+@mixin table-responsive {
+  .table-container.mat-elevation-z8 {
+    overflow-x: auto;
+    .mat-table.mat-table {
+      min-width: 450px;
+    }
+    mat-table {
+      mat-header-row {
+        mat-header-cell {
+          overflow-x: auto;
+          min-width: 150px;
+        }
+      }
+      mat-row {
+        mat-cell {
+          overflow-x: auto;
+          min-width: 150px;
+          button {
+            cursor: pointer;
+            border: none;
+            background: inherit;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  .table-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 5px;
+  }
+}

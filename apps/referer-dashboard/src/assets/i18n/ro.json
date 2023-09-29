@@ -1,0 +1,279 @@
+{
+  "SHARED": {
+    "CHANGE_LANGUAGE": "Schimba limba",
+    "CHANGE_THEME": "Schimba tema",
+    "USERNAME": "Nume utilizator",
+    "FIRST_NAME": "Prenume",
+    "LAST_NAME": "Nume",
+    "EMAIL": "Email",
+    "BIRTH_DATE": "Data nasterii",
+    "NOTE": "Nota",
+    "PHONE": "Numar de telephone",
+    "PASSWORD": "Parola",
+    "PASSWORD_REPEAT": "Repeta parola",
+    "SHOW_PASSWORD": "Arata parola",
+    "HIDE_PASSWORD": "Ascunde parola",
+    "SUBMIT": "Trimite",
+    "LOGOUT": "Iesire",
+    "CONFIRM": "Confirma",
+    "CANCEL": "Anuleaza",
+    "UPLOAD": "Incarca ",
+    "LANGUAGES": {
+      "RO": "Romana",
+      "EN": "Engleza"
+    },
+    "THEMES": {
+      "DARK": "Dark",
+      "LIGHT": "Light",
+      "AUTO": "Auto"
+    },
+    "NEW_PROJECT": {
+      "TITLE": "Proiect nou",
+      "NAME": "Nume proiect",
+      "CITY": "Orasul unde se afla",
+      "AREA": "Zona unde se afla",
+      "SUBMIT": "Trimite",
+      "CANCEL": "Anuleaza",
+      "SUCCESS": " a fost adaugat cu succes"
+    },
+    "EDIT_PROJECT": {
+      "TITLE": "Editeaza proiectul",
+      "NAME": "Nume proiect",
+      "CITY": "Orasul unde se afla",
+      "AREA": "Zona unde se afla",
+      "SUCCESS": " a fost modificat cu succes"
+    },
+    "DELETE_PROJECT": {
+      "TITLE": "Sterge proiectul",
+      "CONTENT": "Esti sigur ca doresti sa stergi acest proiect?",
+      "SUCCESS": " a fost sters cu succes"
+    },
+    "NEW_CATEGORY": {
+      "TITLE": "Categorie noua",
+      "NAME": "Nume categorie",
+      "SUCCESS": "Categoria a fost adaugata cu succes"
+    },
+    "NEW_TASK": {
+      "TITLE": "Lucrare noua",
+      "NAME": "Nume lucrare",
+      "SUCCESS": "Lucrarea a fost adaugata cu succes"
+    },
+    "EDIT_CATEGORY": {
+      "TITLE": "Editeaza categoria",
+      "NAME": "Nume categorie",
+      "SUCCESS": "Categoria a fost editata cu succes",
+      "EDIT": "Editeaza categoria",
+      "DELETE": "Sterge categoria",
+      "ADD_TASK": "Adauga o noua lucrare",
+      "ADD_SUBCATEGORY": "Adauga subcategorie"
+    },
+    "EDIT_TASK": {
+      "TITLE": "Editeaza lucrarea",
+      "NAME": "Nume lucrare",
+      "SUCCESS": "Lucrarea a fost editata cu succes",
+      "EDIT": "Editeaza lucrarea",
+      "DELETE": "Sterge lucrarea"
+    },
+    "DELETE_CATEGORY": {
+      "TITLE": "Sterge categoria",
+      "CONTENT": "Esti sigur ca vrei sa stergi aceasta categorie?",
+      "SUCCESS": "Categoria a fost stearsa cu succes"
+    },
+    "DELETE_TASK": {
+      "TITLE": "Sterge lucrarea",
+      "CONTENT": "Esti sigur ca vrei sa stergi aceasta lucrare?",
+      "SUCCESS": "Lucrarea a fost stearsa cu succes"
+    }
+  },
+  "MENU": {
+    "BUTTON_HOME": "ACASĂ",
+    "BUTTON_ABOUT": "DESPRE",
+    "BUTTON_PROJECTS": "PROIECTE",
+    "BUTTON_USERS": "UTILIZATORI",
+    "BUTTON_DASHBOARD": "TABLOU DE LUCRU"
+  },
+  "HOME": {
+    "TITLE": "Pagina ACASĂ",
+    "FORM_MAT_LABEL": "Mâncarea favorită",
+    "FORM_INPUT_PLACEHOLDER": "Ex. Pița"
+  },
+  "ABOUT": {
+    "TITLE": "Pagina DESPRE",
+    "SLIDE_TOGGLE": "Slide me!"
+  },
+  "FORGOT": {
+    "TITLE": "Parolă uitată?",
+    "SUB_TITLE": "Te rog inserează adresa ta de email",
+    "EMAIL": "Adresa de email",
+    "ERROR_RESET_LINK": "Emailul este",
+    "ERROR_EMAIL_INVALID": "Email invalid",
+    "SEND_EMAIL_LINK": "Trimite-mi un link de resetare"
+  },
+  "LOGIN": {
+    "TITLE": "Logare",
+    "EMAIL": "Email",
+    "ERROR_EMAIL": "Emailul este",
+    "ERROR_EMAIL_INVALID": "Email invalid",
+    "PASSWORD": "Parola",
+    "ERROR_PASSWORD": "Parola este",
+    "ERROR_PASSWORD_INVALID": "Parolă Invalidă",
+    "SUBMIT": "Trimite",
+    "ACCOUNT": "Nu ai încă un cont?",
+    "REGISTER": "Înregistrează-te",
+    "FORGOT": "Ți-ai uitat parola?"
+  },
+  "PROJECTS": {
+    "TITLE": "Pagina PROIECTE",
+    "THE_PROJECT": "PROIECTUL"
+  },
+  "PROJECTS_ID": {
+    "TITLE": "ID selectat!"
+  },
+  "REGISTRATION": {
+    "TITLE": "Înregistrare",
+    "FIRST_NAME": "Prenumele",
+    "ERROR_FIRST_NAME": "Prenumele este",
+    "LAST_NAME": "Numele",
+    "ERROR_LAST_NAME": "Numele este",
+    "EMAIL": "Adresa de email",
+    "ERROR_EMAIL": "Emailul este",
+    "ERROR_EMAIL_INVALID": "Email invalid",
+    "WEBSITE": "Website",
+    "PASSWORD": "Parola",
+    "ERROR_PASSWORD": "Parola este",
+    "ERROR_PASSWORD_INVALID": "Parolă invalidă",
+    "CONFIRM_PASSWORD": "Confirmă parola",
+    "ERROR_CONFIRM_PASSWORD": "Confirmarea parolei ete",
+    "ERROR_CONFIRM_PASSWORD_INVALID": "Parolele nu sunt identice",
+    "ACCOUNT": "Creează-ți un cont",
+    "LOGIN_ACCOUNT": "Ai deja un cont?"
+  },
+  "RESET_PASSWORD": {
+    "TITLE": "Resetează parola",
+    "SUB_TITLE": "Te rog inserează noua parolă",
+    "PASSWORD": "Parola",
+    "ERROR_PASSWORD": "Parola este",
+    "ERROR_PASSWORD_INVALID": "Parolă invalidă",
+    "CONFIRM_PASSWORD": "Confirmă parola",
+    "ERROR_CONFIRM_PASSWORD": "Confirmarea parolei este",
+    "ERROR_CONFIRM_PASSWORD_INVALID": "Parolele nu corespund",
+    "RESET": "Resetează parola"
+  },
+  "USERS": {
+    "TITLE": "Pagina UTILIZATORI",
+    "BUTTON_CLICK": "Clic aici"
+  },
+  "USER_INVITE": {
+    "TITLE": "Adauga adresa de email a persoanei pe care o doresti sa o inviti la proiect",
+    "EMAIL": "Adresa de email",
+    "ERROR_EMAIL": "Emailul este",
+    "ERROR_EMAIL_INVALID": "Email invalid",
+    "ERROR_REQUIRED": "obligatoriu",
+    "SELECT_ROLE": {
+      "LABEL": "Alege un rol",
+      "EDITOR": "Editor",
+      "VIEWER": "Vizitator",
+      "ERROR_REQUIRED": "Trebuie sa alegi un rol"
+    },
+    "SUBMIT_BUTTON": "Trimite invitatia",
+    "CONFIRM_DIALOG": {
+      "TITLE": "Retrimiti emailul?",
+      "CONTENT": "Userul are deja acest rol pe acest proiect emailul cu invitatia a fost deja transmis. Doresti sa retransmiti emailul?"
+    }
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Drept de autor"
+  },
+  "HEADER": {
+    "LOGIN": "Logare",
+    "REGISTRATION": "Înregistrare",
+    "HOME": "Acasă"
+  },
+  "DASHBOARD": {
+    "DASHBOARD": "Tabloul de bord",
+    "DATA_AND_COSTS": "Date și costuri",
+    "DOCUMENTS": "Documente",
+    "OVERVIEW": "Prezentare Generala",
+    "PROJECT_CATEGORIES": "Categoriile Proiectului",
+    "SETTINGS": "Setari"
+  },
+  "DASHBOARD_FORM": {
+    "TITLE": "Formular proiect",
+    "NAME": "Numele tau",
+    "PROJECT_STRUCTURE": "Persoana structura proiect",
+    "PROJECT_NAME": "Nume proiect",
+    "AUTHORISATION_NR": "Numar autorizatie",
+    "SEND_DATA": "Trimite datele"
+  },
+  "DASHBOARD_RIGHT_SIDE": {
+    "PROJECT_STATUS": "Status proiect",
+    "PROJECT_NOT_SELECTED_OR_NOT_CREATED_FIRST_LINE": "Nu ai selectat sau nu ai creat niciun proiect.",
+    "PROJECT_NOT_SELECTED_OR_NOT_CREATED_SECOND_LINE": "Te rugam sa selectezi sau sa creezi un proiect.",
+    "PROJECT_ITEM_ID_NOT_SELECTED": "Te rugam sa deschizi meniul si sa selectezi un item."
+  },
+  "DASHBOARD_TABLE_FORM": {
+    "TITLE": "Date noi si costuri",
+    "NUMBER": "Numar",
+    "NAME": "Nume",
+    "MEASUREMENT_UNIT": "Unitate de Masura",
+    "QUANTITY": "Cantitate",
+    "UNIT_PRICE": "Pret Unitar",
+    "VALUE": "Pret",
+    "CREATED_AT": "Creat la",
+    "UPDATED_AT": "Actualizat la",
+    "MENTIONES": "Mentiuni"
+  },
+  "DASHBOARD_TABLE_FORM_MAT_ERROR": {
+    "NAME_REQUIRED": "Campul nume este obligatoriu",
+    "MEASUREMENT_UNIT_REQUIRED": "Campul unitate de masura este obligatoriu",
+    "QUANTITY_REQUIRED": "Campul cantitate este obligatoriu",
+    "QUANTITY_PATTERN": "Campul cantitate poate fi format doar din numere",
+    "UNIT_PRICE_REQUIRED": "Campul pret unitar este obligatoriu",
+    "UNIT_PRICE_PATTERN": "Campul pret unitar poate fi format doar din numere",
+    "MENTIONES_REQUIRED": "Campul mentiuni este obligatoriu"
+  },
+  "MAT_TABLE": {
+    "ACTIONS": "Actiuni",
+    "EDIT": "Editeaza itemul",
+    "DELETE": "Sterge itemul",
+    "DELETE_DIALOG_TITLE": "Sterge articolul",
+    "DELETE_DIALOG_CONTENT": "Esti sigur ca doresti sa stergi acest articol?",
+    "NO_ITEM": "Niciun item",
+    "NO_MENTIONS": "Nici o mentiune",
+    "NOT_EDITED": "Nemodificat"
+  },
+  "DASHBOARD_DOCUMENTS": {
+    "UPLOAD_FILE_BUTTON": "Incarca documente",
+    "OPEN_UPLOAD_FIELD": "Deschide campul de incarcare",
+    "CLOSE_UPLOAD_FIELD": "Inchide campul de incarcare",
+    "DELETE_DOCUMENT": "Sterge documentul",
+    "DELETE_CONFIRMATION": {
+      "TITLE": "Sterge documentul",
+      "CONTENT": "Esti sigur ca doresti sa stergi acest articol?"
+    },
+    "IMAGE_OVERLAY": {
+      "ADDED_BY": "Adaugat de ",
+      "ON": " in data de "
+    }
+  },
+  "UPLOAD_FILE": {
+    "INSTRUCTIONS": "Trageti si plasati fisierul (fisierele) aici sau dati click pe butonul \"Cauta fisierele\".",
+    "UPLOAD_SUCCESS": "Fisierul a fost actualizat cu succes",
+    "UPLOADS_SUCCESS": "Fisierele au fost actualizate cu succes",
+    "BROWS_FILE_BTN": "Cautare fisiere",
+    "MAT_TOOL_TIP": {
+      "UPLOAD": "Incarca",
+      "UPLOAD_ALL": "Incarca tot",
+      "CANCEL": "Anuleaza",
+      "CANCEL_ALL": "Anuleaza tot"
+    }
+  },
+  "DASHBOARD_PAGE": {
+    "SETTINGS": {
+      "DYNAMIC_MENU": "Meniu Dinamic"
+    }
+  },
+  "DEVELOPMENT_LINES": {
+    "IN_PROGRESS": "In lucru..."
+  }
+}

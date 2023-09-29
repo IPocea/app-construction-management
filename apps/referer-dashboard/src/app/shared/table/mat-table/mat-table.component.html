@@ -1,0 +1,174 @@
+<div class="table-header">
+  <mat-form-field>
+    <input
+      matInput
+      (keyup)="applySearchFilter()"
+      (keydown)="clearTimeout()"
+      placeholder="Filter"
+      [(ngModel)]="searchValue"
+    />
+    <!-- it should be searchValue ? 'hidden' : '' but somehow instead of true
+    it is consirederd false. Maybe because ngModel -->
+    <button
+      [ngClass]="!searchValue ? 'hidden' : ''"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="clearSearchValue()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button
+    *ngIf="
+      selectedProject?.roles.admin === currentUser?._id ||
+      selectedProject?.roles.editor.includes(currentUser?._id)
+    "
+    mat-mini-fab
+    aria-label="Add data to the table"
+    (click)="openTableForm('add-item')"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="table-container mat-elevation-z8">
+  <mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="sortData($event)"
+  >
+    <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+      <ng-container *ngIf="col === 'mentiones'">
+        <mat-header-cell *matHeaderCellDef>
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <small *ngIf="row.mentiones">
+            <mat-icon [matTooltip]="row.mentiones">info</mat-icon>
+          </small>
+          <small *ngIf="!row.mentiones">{{
+            'MAT_TABLE.NO_MENTIONS' | translate
+          }}</small>
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngIf="col === 'number'">
+        <mat-header-cell *matHeaderCellDef>
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row; let index = index">
+          <small>{{ index + 1 }}</small>
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngIf="col === 'updatedAt'">
+        <mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [disabled]="isLoading"
+        >
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <small *ngIf="row.createdAt === row.updatedAt">{{
+            'MAT_TABLE.NOT_EDITED' | translate
+          }}</small>
+          <small *ngIf="row.createdAt !== row.updatedAt">
+            {{ row.updatedAt | customDate: 'long' }}
+          </small>
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngIf="col === 'createdAt'">
+        <mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [disabled]="isLoading"
+        >
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <small>
+            {{ row.createdAt | customDate: 'long' }}
+          </small>
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngIf="col === 'value'">
+        <mat-header-cell *matHeaderCellDef>
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <small>{{ row.value | currency: '':'' }}</small>
+        </mat-cell>
+      </ng-container>
+      <ng-container *ngIf="col === 'unitPrice'">
+        <mat-header-cell *matHeaderCellDef>
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <small>{{ row.unitPrice | currency: '':'' }}</small>
+        </mat-cell>
+      </ng-container>
+      <ng-container
+        *ngIf="
+          col !== 'id' &&
+          col !== 'mentions' &&
+          col !== 'number' &&
+          col !== 'updatedAt' &&
+          col !== 'createdAt' &&
+          col !== 'value' &&
+          col !== 'unitPrice'
+        "
+      >
+        <mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          [disabled]="isLoading"
+        >
+          {{ col | wordSeparator }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <small>{{ row[col] }}</small>
+        </mat-cell>
+      </ng-container>
+      <ng-container
+        *ngIf="
+          col === 'id' &&
+          (selectedProject?.roles.admin === currentUser?._id ||
+            selectedProject?.roles.editor.includes(currentUser?._id))
+        "
+      >
+        <mat-header-cell *matHeaderCellDef>
+          {{ 'MAT_TABLE.ACTIONS' | translate }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button
+            [matTooltip]="'MAT_TABLE.EDIT' | translate"
+            [disabled]="isLoading"
+            class="mr-5"
+            (click)="openTableForm('edit-item', row)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            [matTooltip]="'MAT_TABLE.DELETE' | translate"
+            (click)="deleteItem(row[col])"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
+  </mat-table>
+</div>
+
+<mat-paginator
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  [pageSizeOptions]="pageSizeOptions"
+  [length]="length"
+  [showFirstLastButtons]="showFirstLastButtons"
+  (page)="handlePageChange($event)"
+  [disabled]="isLoading"
+></mat-paginator>

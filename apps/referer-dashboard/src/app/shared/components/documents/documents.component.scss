@@ -1,0 +1,123 @@
+:host {
+  .documents-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .upload-icon {
+      margin-bottom: 10px;
+    }
+  }
+  .documents-upper-side {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    mat-button-toggle-group.select-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border: none;
+      margin-bottom: 10px;
+      .documents-btns-inner-container {
+        display: flex;
+        align-items: center;
+        .long-btn {
+          flex: 1;
+        }
+        .short-btn {
+          white-space: nowrap;
+        }
+        mat-button-toggle {
+          margin-bottom: 10px;
+          button {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    .pdf-box {
+      position: relative;
+      display: none;
+      border: none;
+      width: 100%;
+      height: auto;
+      img {
+        width: 100%;
+        max-height: auto;
+        object-fit: contain;
+      }
+      .image-overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        transition: 0.5s ease;
+        opacity: 0;
+        font-size: 20px;
+        padding: 20px 0;
+      }
+    }
+    .pdf-box:hover .image-overlay {
+      opacity: 1;
+    }
+    
+    ::ng-deep {
+      .documents-upper-side {
+        mat-button-toggle-group.select-buttons {
+          button {
+            span.mat-button-toggle-label-content {
+              display: block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .documents-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center;
+      .upload-icon {
+        height: 70%;
+        margin-bottom: 0;
+      }
+    }
+    .documents-upper-side {
+      flex-direction: row;
+      flex-wrap: wrap;
+      mat-button-toggle-group.select-buttons {
+        width: 30%;
+      }
+      .pdf-box {
+        display: block;
+        width: 68%;
+        height: 65vh;
+        img {
+          max-height: 65vh;
+        }
+      }
+    }
+    ::ng-deep {
+      .documents-upper-side {
+        mat-button-toggle-group.select-buttons {
+          button {
+            span.mat-button-toggle-label-content {
+              display: block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
+  }
+}

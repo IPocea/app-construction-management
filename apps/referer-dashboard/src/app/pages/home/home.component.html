@@ -1,0 +1,29 @@
+<a mat-button color="primary" routerLink="/home" disabled>
+  {{ 'MENU.BUTTON_HOME' | translate }}</a
+>
+<br />
+<br />
+<a mat-stroked-button color="accent" routerLink="/about">
+  {{ 'MENU.BUTTON_ABOUT' | translate }}</a
+>
+<br />
+<br />
+<a mat-raised-button color="accent" routerLink="/projects">
+  {{ 'MENU.BUTTON_PROJECTS' | translate }}</a
+>
+<br />
+<br />
+<a mat-stroked-button color="accent" routerLink="/users">
+  {{ 'MENU.BUTTON_USERS' | translate }}</a
+>
+<br /><br />
+<a mat-raised-button color="primary" routerLink="/dashboard">
+  {{ 'MENU.BUTTON_DASHBOARD' | translate }}
+</a>
+<br /><br />
+
+<mat-form-field style="margin-left: 20px" class="example-full-width" appearance="fill">
+    <mat-label>{{ 'HOME.FORM_MAT_LABEL' | translate }}</mat-label>
+    <input matInput placeholder="
+    {{ 'HOME.FORM_INPUT_PLACEHOLDER' | translate }}" />
+</mat-form-field>

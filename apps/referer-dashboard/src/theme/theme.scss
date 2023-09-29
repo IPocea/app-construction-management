@@ -1,0 +1,17 @@
+body.darkTheme {
+  @import 'dark';
+  @import 'dynamic';
+
+  background-color: $secondary;
+  color: $primary;
+  border-color: $ternary;
+}
+
+body.lightTheme {
+  @import 'light';
+  @import 'dynamic';
+
+  background-color: $secondary;
+  color: $primary;
+  border-color: $ternary;
+}

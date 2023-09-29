@@ -1,0 +1,42 @@
+@import '../../../shared/styles/mixin.scss';
+
+:host {
+  // we need to fix the responsive problem and then we can use include mat-table
+  @include table-responsive();
+  // .table-container {
+  //   // display: flex;
+  //   // flex-direction: column;
+  //   // width: 100%;
+  //   padding: 8px 24px 0;
+  //   mat-table {
+  //     mat-header-row {
+  //       mat-header-cell {
+  //         flex-direction: column;
+  //         justify-content: center;
+  //       }
+  //     }
+  //     mat-row {
+  //       mat-cell {
+  //         text-align: center;
+  //         justify-content: center;
+  //         white-space: normal;
+  //         word-wrap: break-word;
+  //         max-width: 150px;
+
+  //         button {
+  //           cursor: pointer;
+  //           border: none;
+  //           background: inherit;
+  //           padding: 0;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+  // .table-header {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   margin-right: 5px;
+  // }
+}

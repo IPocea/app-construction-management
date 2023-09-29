@@ -1,0 +1,87 @@
+<section>
+  <form (ngSubmit)="submit()" [formGroup]="tableDataForm" autocomplete="off">
+    <h1>{{ 'DASHBOARD_TABLE_FORM.TITLE' | translate }}</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'DASHBOARD_TABLE_FORM.NAME' | translate }}</mat-label>
+      <input type="text" matInput formControlName="name" autocomplete="off" />
+      <mat-error *ngIf="tableDataForm.get('name').hasError('required')">
+        {{ 'DASHBOARD_TABLE_FORM_MAT_ERROR.NAME_REQUIRED' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{
+        'DASHBOARD_TABLE_FORM.MEASUREMENT_UNIT' | translate
+      }}</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="measurementUnit"
+        autocomplete="off"
+      />
+      <mat-error
+        *ngIf="tableDataForm.get('measurementUnit').hasError('required')"
+      >
+        {{
+          'DASHBOARD_TABLE_FORM_MAT_ERROR.MEASUREMENT_UNIT_REQUIRED' | translate
+        }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'DASHBOARD_TABLE_FORM.QUANTITY' | translate }}</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="quantity"
+        autocomplete="off"
+      />
+      <mat-error *ngIf="tableDataForm.get('quantity').hasError('required')">
+        {{ 'DASHBOARD_TABLE_FORM_MAT_ERROR.QUANTITY_REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="tableDataForm.get('quantity').hasError('pattern')">
+        {{ 'DASHBOARD_TABLE_FORM_MAT_ERROR.QUANTITY_PATTERN' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'DASHBOARD_TABLE_FORM.UNIT_PRICE' | translate }}</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="unitPrice"
+        autocomplete="off"
+      />
+      <mat-error *ngIf="tableDataForm.get('unitPrice').hasError('required')">
+        {{ 'DASHBOARD_TABLE_FORM_MAT_ERROR.UNIT_PRICE_REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="tableDataForm.get('unitPrice').hasError('pattern')">
+        {{ 'DASHBOARD_TABLE_FORM_MAT_ERROR.UNIT_PRICE_PATTERN' | translate }}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'DASHBOARD_TABLE_FORM.MENTIONES' | translate }}</mat-label>
+      <textarea
+        type="text"
+        matInput
+        formControlName="mentiones"
+        autocomplete="off"
+      ></textarea>
+    </mat-form-field>
+    <span class="buttons">
+      <button
+        type="button"
+        (click)="closeDialog()"
+        mat-raised-button
+        class="mat-focus-indicator secondary-text ternary-bg mat-button mat-button-base"
+      >
+        {{ 'SHARED.NEW_PROJECT.CANCEL' | translate }}
+      </button>
+      <button
+        type="submit"
+        mat-raised-button
+        class="mat-focus-indicator secondary-text primary-bg mat-button mat-button-base"
+        [disabled]="tableDataForm.invalid || isLoading"
+      >
+        {{ 'DASHBOARD_FORM.SEND_DATA' | translate }}
+      </button> 
+    </span>
+  </form>
+</section>
